@@ -143,8 +143,16 @@ module.exports = function(grunt) {
     },
 
     ngAnnotate: {
-      //TODO
-      // needed in order to serve minifed JS with angular in it
+      options: {
+        singleQuotes: true
+      },
+      app: {
+        expand: true,
+        cwd: 'src/client/assets/scripts',
+        src: 'app.js',
+        dest: '../annotated',
+        ext: 'annotated.js'
+      }
     },
 
     nodemon: {
